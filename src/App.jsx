@@ -1,22 +1,24 @@
-import { getDatabase, ref, set } from "firebase/database"
-import { app } from "./firebase"
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+// import { app } from "./firebase"
+import SignupPage from "./pages/Signup"
+import SigninPage from "./pages/Signin"
 
-const db = getDatabase(app)
+// const auth = getAuth(app)
 
 function App() {
 
-  const putData = () => {
-    set(ref(db, "users/akshay"), {
-      id: 1,
-      name: "Akshay Rawat",
-      age: 22
-    })
-  }
+  // const signupUser = () => {
+  //   createUserWithEmailAndPassword(
+  //     auth,
+  //     "akshayrawat.dev@gmail.com",
+  //     "akshayrawat123"
+  //   ).then((value) => console.log(value))
+  // }
 
   return (
     <>
-      <h1>Firebase React App</h1>
-      <button onClick={putData} >Put Data</button>
+      <SignupPage />
+      <SigninPage />
     </>
   )
 }
